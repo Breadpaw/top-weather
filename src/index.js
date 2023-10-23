@@ -15,7 +15,7 @@ async function getWeatherForLocation(location) {
 
 async function generateWeatherBadgeForLocation(location) {
 
-	const parsedResponse = await getWeatherForLocation(location);
+    const parsedResponse = await getWeatherForLocation(location);
     const locationName = parsedResponse.location.name;
     const temperature = parsedResponse.current.temp_c;
     const windDirection = parsedResponse.current.wind_dir;
@@ -51,6 +51,19 @@ async function generateWeatherBadgeForLocation(location) {
     weatherContainer.appendChild(element);    
 }
 
-const locationsArray = ['New York', 'Bennekom', 'Hong Kong', 'Buenos Aires'];
+const locationsArray = [
+    'New York', 
+    'Bennekom', 
+    'Hong Kong', 
+    'Buenos Aires', 
+    'Cape Town', 
+    'Sao Paulo', 
+    'Rio de Janeiro',
+    'Bangkok',
+    'Tokyo',
+    'Los Angeles',
+    'New York'];
 
 locationsArray.forEach((location) => generateWeatherBadgeForLocation(location))
+
+async function
