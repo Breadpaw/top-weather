@@ -10,7 +10,7 @@ async function getWeatherForLocation(location) {
 	const response = await fetch(`${baseURL}q=${location}&aqi=no`);
 	const parsedResponse = await response.json();
 	console.log(parsedResponse);
-	return parsedResponse;
+	return Promise.resolve(parsedResponse);
 }
 
 async function generateWeatherBadgeForLocation(location) {
