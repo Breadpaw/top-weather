@@ -1,10 +1,38 @@
+/* Fonts */
+
+@font-face {
+    font-family: FutureEarth;
+    src: url('./assets/fonts/future-earth.ttf');
+}
+
+/* Styling */
+
 .weather-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .weather-badge {
-    border: solid 2px black;
+    min-width: 300px;;
     padding: 10px;
     border-radius: 10px;
     margin:10px;
+    /* Background met kleur van dag/nacht */
+    background-color: lightblue;
+    box-shadow: 0px 0px 7px #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+
+.city-header {
+    width: 100%;
+    display: flex;
+    flex-direction:row ;
+    justify-content: space-between;
+    font-size: 22px;
+    font-family: 'FutureEarth';
+}
+
+.weather-image {
+    margin-top: -5px;
 }
