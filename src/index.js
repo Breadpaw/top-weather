@@ -62,4 +62,26 @@ async function renderView(array) {
 
 const locationsArray = ['New York', 'Bennekom','Hong Kong','Buenos Aires','Cape Town', 'Sao Paulo', 'Rio de Janeiro','Bangkok','Tokyo','Los Angeles','New York'];
 
-renderView(locationsArray)
+// renderView(locationsArray)
+
+function addButton(){
+    body = document.body;
+
+    const formField = document.createElement('input');
+    formField.type = "text";
+    formField.id = 'location';
+    body.appendChild(formField);
+
+    const button = document.createElement('button');
+    button.textContent = "Weather at location"
+    button.onclick = () => {
+        const locField = document.getElementById('location');
+        const location = locField.value;
+        generateWeatherBadgeForLocation(location)
+    }
+
+    body.appendChild(button);
+    
+}
+
+addButton();
