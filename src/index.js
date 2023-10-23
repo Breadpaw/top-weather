@@ -49,21 +49,17 @@ async function generateWeatherBadgeForLocation(location) {
     }
 
     weatherContainer.appendChild(element);    
+    return Promise.resolve(element)
 }
 
-const locationsArray = [
-    'New York', 
-    'Bennekom', 
-    'Hong Kong', 
-    'Buenos Aires', 
-    'Cape Town', 
-    'Sao Paulo', 
-    'Rio de Janeiro',
-    'Bangkok',
-    'Tokyo',
-    'Los Angeles',
-    'New York'];
+async function renderView(array) {
+    while(await array.forEach((element) => generateWeatherBadgeForLocation(element))){
+        // loading
+        console.log('loading')
+    }
+    return Promise.resolve(false);
+}
 
-locationsArray.forEach((location) => generateWeatherBadgeForLocation(location))
+const locationsArray = ['New York', 'Bennekom','Hong Kong','Buenos Aires','Cape Town', 'Sao Paulo', 'Rio de Janeiro','Bangkok','Tokyo','Los Angeles','New York'];
 
-async function
+renderView(locationsArray)
