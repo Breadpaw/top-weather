@@ -10,13 +10,16 @@
 body {
     background-color: #777;
 }
+
 .weather-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
+    justify-content: space-between;
 }
 
 .weather-badge {
-    min-width: 300px;;
+    flex-grow: 1;
+    flex-basis: 300px;
     padding: 10px;
     border-radius: 10px;
     margin:10px;
