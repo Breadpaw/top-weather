@@ -26,9 +26,14 @@ async function generateWeatherBadgeForLocation(location) {
     element.id = `${location}`;
 
     const weatherString = `
-    <b>${locationName}:</b>
+        <div class="city-header">
+            <div class="city-name">${locationName}:</div>
+            <div class="city-image"><img src="${weatherImageSrc}" class="weather-image"></div>
+        </div>
+        <div class="conditions">
     <p>Temperature: ${temperature} communist degrees</p>
-    <p>Wind from: ${windDirection} with ${windSpeed} km/hr</p>`;
+            <p>Wind from: ${windDirection} with ${windSpeed} km/hr</p>
+        </div>`
 
     element.innerHTML = weatherString;
 
