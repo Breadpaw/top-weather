@@ -20,22 +20,33 @@ async function generateWeatherBadgeForLocation(location) {
     const temperature = parsedResponse.current.temp_c;
     const windDirection = parsedResponse.current.wind_dir;
     const windSpeed = parsedResponse.current.wind_kph;
+    const weatherImageSrc = parsedResponse.current.condition.icon;
+    const isDay = parsedResponse.current.is_day;
     
     const element = document.createElement('div');
     element.classList.add('weather-badge')
     element.id = `${location}`;
 
     const weatherString = `
+    
         <div class="city-header">
             <div class="city-name">${locationName}:</div>
             <div class="city-image"><img src="${weatherImageSrc}" class="weather-image"></div>
         </div>
         <div class="conditions">
-    <p>Temperature: ${temperature} communist degrees</p>
+            <p>Temperature: ${temperature} communist degrees</p>
             <p>Wind from: ${windDirection} with ${windSpeed} km/hr</p>
         </div>`
 
     element.innerHTML = weatherString;
+
+    // Conditionals for certain values in the badge
+
+    // Day/Night
+    if (!isDay) {
+        element.style.backgroundColor = '#00004d';
+        element.style.color = '#f2f2f2';
+    }
 
     weatherContainer.appendChild(element);    
 }
